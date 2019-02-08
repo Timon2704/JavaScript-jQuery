@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- eigene CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+  <div class="container">
+    <h1>Mein Formular</h1>
+
+
+    <form class="needs-validation" novalidate>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="gender">Anrede</label>
+          <select name="gender" id="gender" class="form-control">
+            <option value="" selected></option>
+            <option value="female" id="female">Frau</option>
+            <option value="male" id="male">Herr</option>
+          </select>
+        </div>
+        <div class="form-group col-md-5">
+          <label for="firstname">Vorname</label>
+          <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Vorname ...">
+        </div>
+        <div class="form-group col-md-5">
+          <label for="lastname">Nachname</label>
+          <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Nachname ...">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="E-Mail ...">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="password">Passwort</label>
+          <input type="password" class="form-control" id="password" placeholder="Passwort ...">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="">
+          <p>Wie oft möchten Sie unseren Newsletter erhalten?</p>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option1" value="daily">
+          <label class="form-check-label" for="option1">täglich</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option2" value="weekly">
+          <label class="form-check-label" for="option2">wöchentlich</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option3" value="monthly">
+          <label class="form-check-label" for="option3">monatlich</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" required>
+          <label class="form-check-label" for="gridCheck">
+            Ich bin mit den <a href="#">AGB</a> einverstanden.
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign in</button>
+
+    </form>
+  </div>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

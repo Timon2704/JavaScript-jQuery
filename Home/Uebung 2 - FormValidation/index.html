@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- eigene CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+  <div class="container">
+    <h1>Mein Formular</h1>
+
+
+    <form class="needs-validation" id="form" novalidate>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="gender">Anrede</label>
+          <select name="gender" id="gender" class="form-control" required>
+            <option value="" selected></option>
+            <option value="female" id="female">Frau</option>
+            <option value="male" id="male">Herr</option>
+          </select>
+          <small id="gender-false" class="feedback-false">Darf nicht leer sein!</small>
+          <small id="gender-true" class="feedback-true">Sieht gut aus!</small>
+
+
+        </div>
+        <div class="form-group col-md-5">
+          <label for="firstname">Vorname</label>
+          <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Vorname ..." required>
+          <small id="firstname-false" class="feedback-false">Darf nicht leer sein!</small>
+          <small id="firstname-true" class="feedback-true">Sieht gut aus!</small>
+        </div>
+        <div class="form-group col-md-5">
+          <label for="lastname">Nachname</label>
+          <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Nachname ..." required>
+          <small id="lastname-false" class="feedback-false">Darf nicht leer sein!</small>
+          <small id="lastname-true" class="feedback-true">Sieht gut aus!</small>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="E-Mail ..." required>
+          <small id="email-false" class="feedback-false">Überprüfen Sie Ihre Eingabe!</small>
+          <small id="email-true" class="feedback-true">Sieht gut aus!</small>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="psw">Passwort</label>
+          <input type="password" class="form-control" id="psw" placeholder="Passwort ..." required>
+          <small id="psw-false" class="feedback-false">Ihr Passwort muss mindestens 8 Zeichen lang sein!</small>
+          <small id="psw-true" class="feedback-true">Sieht gut aus!</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="">
+          <p>Wie oft möchten Sie unseren Newsletter erhalten?</p>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option1" value="daily" required>
+          <label class="form-check-label" for="option1">täglich</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option2" value="weekly" required>
+          <label class="form-check-label" for="option2">wöchentlich</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="newsletter" id="option3" value="monthly" required>
+          <label class="form-check-label" for="option3">monatlich</label>
+        </div>
+        <div class="invalid-feedback">Wählen Sie mindestens einen Wert aus!</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" required>
+          <label class="form-check-label" for="gridCheck">
+            Ich bin mit den <a href="#">AGB</a> einverstanden.
+          </label>
+          <div class="invalid-feedback">Sie müssen unsere AGB akzeptieren!</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Anmelden</button>
+
+    </form>
+  </div>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- eigene Scripts -->
+  <script>
+    /*
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    */
+  </script>
+
+  <script>
+    //Meldungen vertecken:
+    $('small').hide();
+
+    //Anrede:
+    $('#gender').change(function() {
+
+      if ($(this).val() != "") {
+        $('#gender-false').hide();
+        $('#gender-true').show();
+      } else {
+        $('#gender-false').show();
+        $('#gender-true').hide();
+      }
+    })
+
+    //Vorname:
+    $('#firstname').keyup(function() {
+
+      if ($(this).val() != "") {
+        $('#firstname-false').hide();
+        $('#firstname-true').show();
+      } else {
+        $('#firstname-false').show();
+        $('#firstname-true').hide();
+      }
+    })
+
+    //Nachname:
+    $('#lastname').keyup(function() {
+
+      if ($(this).val() != "") {
+        $('#lastname-false').hide();
+        $('#lastname-true').show();
+      } else {
+        $('#lastname-false').show();
+        $('#lastname-true').hide();
+      }
+    })
+
+    //E-Mail:
+    $('#email').keyup(function() {
+
+      var regx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var email = $(this).val();
+
+      if (regx.test(email)) {
+        $('#email-false').hide();
+        $('#email-true').show();
+      } else {
+        $('#email-false').show();
+        $('#email-true').hide();
+      }
+    })
+
+    //Passwort:
+    $('#psw').keyup(function() {
+
+      if ($(this).val().length >= 8) {
+        $('#psw-false').hide();
+        $('#psw-true').show();
+      } else {
+        $('#psw-false').show();
+        $('#psw-true').hide();
+      }
+    })
+
+
+
+
+
+
+    $('#password').keyup(function() {
+
+      var input = $(this).val();
+
+      if (input.length >= 8) {
+        $('#password').addClass('valid');
+        $('#password').removeClass('in-valid');
+        console.log("korrekt");
+      } else {
+        $('#password').addClass('in-valid');
+        $('#password').removeClass('valid');
+        console.log("falsch");
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>

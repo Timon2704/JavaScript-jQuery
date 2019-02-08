@@ -1,0 +1,27 @@
+h1 {
+  margin: 50px 0 20px;
+}
+
+
+.valid {
+  border: 1px solid lightgreen;
+  color: lightgreen;
+}
+
+
+.in-valid {
+  border: 1px solid red;
+  color: red;
+}
+
+.feedback-true {
+  display: block;
+  color: lightgreen;
+  margin-top: 5px;
+}
+
+.feedback-false {
+  display: block;
+  color: red;
+  margin-top: 5px;
+}
