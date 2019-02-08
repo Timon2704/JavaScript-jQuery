@@ -1,0 +1,13 @@
+.cf_invalid {
+  color: red;
+  display: block;
+}
+
+.padding_gender {
+  padding: 0 15px;
+}
+
+.success {
+  text-align: center;
+  margin-top: 150px;
+}

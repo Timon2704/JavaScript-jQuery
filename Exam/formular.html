@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+  <!-- eigene CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Formular Vorlage zur Validierung</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 offset-sm-1 offset-md-3 col-md-6 my-5">
+
+
+        <h1>Willkommen beim Finale des jQuery Moduls!</h1>
+
+        <div class="alert alert-info my-5">
+          <b>Viel Erfolg!</b>
+        </div>
+
+
+        <form id="main-form" action="success.html">
+
+
+          <!-- Anrede -->
+          <div class="form-group">
+            <div class="form-row">
+
+              <div class="col-sm-6">
+                <div class="row" id="gender">
+
+                  <div class="col-4 mb-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" id="cf_salutation_mr" name="cf_salutation">
+                      <label class="custom-control-label" for="cf_salutation_mr">Herr</label>
+                    </div>
+                  </div>
+
+                  <div class="col-4 mb-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" id="cf_salutation_mrs" name="cf_salutation">
+                      <label class="custom-control-label" for="cf_salutation_mrs">Frau</label>
+                    </div>
+                  </div>
+
+                  <div class="col-4 mb-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" id="cf_salutation_other" name="cf_salutation">
+                      <label class="custom-control-label" for="cf_salutation_other">Sonstiges</label>
+                    </div>
+                  </div>
+
+                  <small class="cf_invalid padding_gender" id="feedback_salutation">Bitte wählen Sie einen Wert aus!</small>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Vorname -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="cf_firstname">Vorname</label>
+              <input type="text" class="form-control" id="cf_firstname" placeholder="Vorname" value="">
+              <small class="cf_invalid" id="feedback_firstname">Bitte überprüfen Sie Ihre Eingabe!</small>
+            </div>
+          </div>
+
+          <!-- Nachname -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="cf_lastname">Nachname</label>
+              <input type="text" class="form-control" id="cf_lastname" placeholder="Nachname" value="">
+              <small class="cf_invalid" id="feedback_lastname">Bitte überprüfen Sie Ihre Eingabe!</small>
+            </div>
+          </div>
+
+          <!-- E-Mail -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="cf_email">Email</label>
+              <input type="text" class="form-control" id="cf_email" placeholder="example@example.com">
+              <small class="cf_invalid" id="feedback_email">Geben Sie eine gültige E-Mail-Adresse ein!</small>
+            </div>
+          </div>
+
+          <!-- Passwort -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="cf_pwd">Passwort</label>
+              <input type="password" class="form-control" id="cf_pwd" placeholder="">
+              <small class="cf_invalid" id="feedback_password">min. 8 Zeichen, min. 1 Kleinbuchstabe, min. 1 Großbuchstabe, min. 1 Zahl und min. 1 Sonderzeichen.</small>
+            </div>
+          </div>
+
+          <!-- Passwort wiederholen -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="cf_pwd_confirmation">Passwort wiederholen</label>
+              <input type="password" class="form-control" id="cf_pwd_confirmation" placeholder="">
+              <small class="cf_invalid" id="feedback_password_confirm">Ihre beiden Passwort-Eingaben müssen übereinstimmen!</small>
+            </div>
+          </div>
+
+          <!-- Datum -->
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label class="control-label" for="cf_date">Datum</label>
+              <input class="form-control" id="cf_date" name="date" placeholder="DD.MM.YYYY" type="text" />
+              <small class="cf_invalid" id="feedback_date">Bitte geben Sie ein gültiges Datum ein!</small>
+            </div>
+          </div>
+
+          <!-- Datenschutz -->
+          <div class="form-check">
+            <div class="col-md-12 mb-3">
+              <input class="form-check-input" type="checkbox" value="ok" id="cf_policy">
+              <label class="form-check-label" for="cf_policy">
+                Datenschutzbestimmungen zustimmen.
+              </label>
+              <small class="cf_invalid feedback_policy" id="feedback_policy"><br>Stimmen Sie unseren Datenschutzbestimmungen zu!</small>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn btn-primary" type="submit" id="submit">Abschicken</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Bootstrap Date-Picker Plugin -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <!-- eigenes JS -->
+  <script src="js/script.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      var date_input = $('input[name="date"]'); //our date input has the name "date"
+      var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+      var options = {
+        format: 'dd.mm.yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    });
+  </script>
+
+  <script>
+
+
+    // Variablen:
+    var errorCounter = 0;
+    var regxMail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var patternPw = /^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;
+    var patternDate = /^\s*(3[01]|[12][0-9]|0?[1-9])\.(1[012]|0?[1-9])\.((?:19|20)\d{2})\s*$/;
+
+    var feedbackGender = $('#feedback_salutation');
+    var genderOk = false;
+
+    var firstname = $('#cf_firstname');
+    var feedbackFirstname = $('#feedback_firstname');
+    var firstnameOk = false;
+
+    var lastname = $('#cf_lastname');
+    var feedbackLastname = $('#feedback_lastname');
+    var lastnameOk = false;
+
+    var email = $('#cf_email');
+    var feedbackEmail = $('#feedback_email');
+    var emailOk = false;
+
+    var password = $('#cf_pwd');
+    var feedbackPassword = $('#feedback_password');
+    var passwordOk = false;
+
+    var passwordConfirm = $('#cf_pwd_confirmation');
+    var feedbackPasswordConfirm = $('#feedback_password_confirm');
+    var passwordConfirmOk = false;
+
+    var date = $('#cf_date');
+    var feedbackDate = $('#feedback_date');
+    var dateOk = false;
+
+    var policy = $("#cf_policy");
+    var feedbackPolica = $('#feedback_policy');
+    var policyOk = false;
+
+
+    // Meldung Anrede:
+    $('#gender').click(function() {
+      if ($('#cf_salutation_mr').prop("checked") || $('#cf_salutation_mrs').prop("checked") || $('#cf_salutation_other').prop("checked")) {
+        $(feedbackGender).hide();
+        genderOk = true;
+      } else {
+        $(feedbackGender).show();
+        var genderOk = false;
+      }
+    })
+
+    // Meldung Vorname:
+    firstname.keyup(function() {
+      if ($(this).val().length < 2) {
+        $(feedbackFirstname).show();
+        firstnameOk = false;
+      } else {
+        $(feedbackFirstname).hide();
+        firstnameOk = true;
+      }
+    })
+
+    // Meldung Nachname:
+    lastname.keyup(function() {
+      if ($(this).val().length < 2) {
+        $(feedbackLastname).show();
+        lastnameOk = false;
+      } else {
+        $(feedbackLastname).hide();
+        lastnameOk = true;
+      }
+    })
+
+    // Meldung EMail:
+    email.keyup(function() {
+      if (regxMail.test($(this).val())) {
+        $(feedbackEmail).hide();
+        emailOk = true;
+      } else {
+        $(feedbackEmail).show();
+        emailOk = false;
+      }
+    })
+
+    // Meldung Password:
+    password.keyup(function() {
+      if (patternPw.test($(this).val())) {
+        $(feedbackPassword).hide();
+        passwordOk = true;
+      } else {
+        $(feedbackPassword).show();
+        passwordOk = false;
+      }
+    })
+
+    // Meldung Passwort Confirm:
+    passwordConfirm.keyup(function() {
+      if (password.val() === passwordConfirm.val()) {
+        $(feedbackPasswordConfirm).hide();
+        passwordConfirmOk = true;
+      } else {
+        $(feedbackPasswordConfirm).show();
+        passwordConfirmOk = false;
+      }
+    })
+
+    // Meldung Datum:
+    date.change(function() {
+      if (patternDate.test($(this).val())) {
+        $(feedbackDate).hide();
+        dateOk = true;
+      } else {
+        $(feedbackDate).show();
+        dateOk = false;
+      }
+    })
+
+    // Meldung Datenschutz:
+    policy.click(function() {
+      if (policy.prop("checked")) {
+        $(feedbackPolica).hide();
+        policyOk = true;
+      } else {
+        $(feedbackPolica).show();
+        policyOk = false;
+      }
+    })
+
+    // Kontrolle ob eine Meldung gezeigt wird:
+    $('#main-form').submit(function() {
+
+      // Meldung Anrede - zusätzlich überprüfen:
+      if ($('#cf_salutation_mr').prop("checked") ||
+        $('#cf_salutation_mrs').prop("checked") ||
+        $('#cf_salutation_other').prop("checked")) {
+        $(feedbackGender).hide();
+        genderOk = true;
+      } else {
+        $(feedbackGender).show();
+        genderOk = false;
+      }
+
+      // Überprüfung bei Submit:
+      if (genderOk == false ||
+        firstnameOk == false ||
+        lastnameOk == false ||
+        emailOk == false ||
+        passwordOk == false ||
+        passwordConfirmOk == false ||
+        dateOk == false ||
+        policyOk == false) {
+        window.alert('Bitte überprüfen Sie Ihre Eingabe!');
+        return false;
+      }
+
+    })
+  </script>
+
+
+
+</body>
+
+</html>
